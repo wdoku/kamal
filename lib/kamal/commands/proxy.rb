@@ -8,6 +8,7 @@ class Kamal::Commands::Proxy < Kamal::Commands::Base
       "--detach",
       "--restart", "unless-stopped",
       "--volume", "kamal-proxy-config:/home/kamal-proxy/.config/kamal-proxy",
+      "--volume", "kamal-proxy-certs:/home/kamal-proxy/.config/certs", 
       "\$\(#{get_boot_options.join(" ")}\)",
       config.proxy_image
   end
